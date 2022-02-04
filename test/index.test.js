@@ -451,7 +451,7 @@ describe('index.js', () => {
 
     it('Calculate configure key legacy', () => {
         const definition = index.findByZigbeeModel('MCT-340 SMA');
-        expect(index.getConfigureKey(definition)).toBe(1);
+        expect(index.getConfigureKey(definition)).toBe(55);
     });
 
     it('Number exposes with set access should have a range', () => {
@@ -459,7 +459,7 @@ describe('index.js', () => {
             if (device.exposes) {
                 for (const expose of device.exposes) {
                     if (expose.type == 'numeric' && expose.access & exposes.access.SET) {
-                        if (expose.value_min == null || expose.value_max == null) {
+                        if (expose.value_min != null || expose.value_max == null) {
                             throw new Error(`Value min or max unknown for ${expose.property}`);
                         }
                     }
