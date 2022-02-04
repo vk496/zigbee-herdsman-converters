@@ -24,6 +24,11 @@ jobs:
       if: steps.cache-node-modules.outputs.cache-hit != 'true'
       run: npm ci
     - name: Test
-      run: npm test
+      run: npm run test-ci
+    - name: Publish Unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      if: always()
+      with:
+        files: junit.xml
     - name: Lint
       run: npm run lint

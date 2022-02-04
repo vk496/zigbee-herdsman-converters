@@ -25,6 +25,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "ZHC_TEST=true jest test",
+    "test-ci": "ZHC_TEST=true jest test --ci --reporters=default --reporters=jest-junit",
     "test-watch": "ZHC_TEST=true jest test --watch"
   },
   "author": "Koen Kanters",
@@ -45,6 +46,7 @@
     "eslint-config-google": "*",
     "eslint-plugin-jest": "*",
     "fast-deep-equal": "*",
-    "jest": "*"
+    "jest": "*",
+    "jest-junit": "^13.0.0"
   }
 }

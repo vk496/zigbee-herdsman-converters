@@ -7,3 +7,4 @@ node_modules/
 .eslintrc.js
 .vscode
 tmp
+junit.xml
